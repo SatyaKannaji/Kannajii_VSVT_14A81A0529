@@ -1,3 +1,4 @@
+import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
@@ -5,7 +6,8 @@ public class Main {
 		//You may test that your code works find here
 		//Please check that your code works and has no 
 		//compilation problems before to submit
-        
+		
+		
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter no of students");
 		int n=sc.nextInt();
@@ -15,9 +17,15 @@ public class Main {
 		{	System.out.println("Enter Student data:");
 			int id=sc.nextInt();
 			String name=sc.next();
-			Date d=new Date(sc.next());
+			String string = sc.next();
+			DateFormat format = new SimpleDateFormat("yyyy/MM/dd");
+			Date date = format.parse(string);
+
+
+
+			//Date d=new Date(sc.next());
 			double avg=sc.nextDouble();
-			s[i]=new Student(id,name,d,avg);
+			s[i]=new Student(id,name,date,avg);
 		}
 		sg.setStudents(s);
 		Student res[]=sg.getStudents();
@@ -49,7 +57,7 @@ public class Main {
 		}*/
 		
 		
- 
 	}
+	
 
 }
